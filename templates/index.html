@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tareas</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <script src="../static/script.js" defer></script>
+</head>
+<body>
+
+    <div class="container" id="loginContainer">
+        <h2>Iniciar Sesión</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Usuario" required>
+            <input type="password" id="password" placeholder="Contraseña" required>
+            <button type="submit">Ingresar</button>
+        </form>
+        <p>¿No tienes cuenta? <a href="#" id="showRegister">Regístrate</a></p>
+    </div>
+
+    
+    <div class="container" id="registerContainer" style="display: none;">
+        <h2>Registro</h2>
+        <form id="registerForm">
+            <input type="text" id="regUsername" placeholder="Usuario" required>
+            <input type="password" id="regPassword" placeholder="Contraseña" required>
+            <select id="regRole" required>
+                <option value="" disabled selected>Selecciona un rol</option> 
+                <option value="estudiante">Estudiante</option>
+                <option value="profesor">Profesor</option>
+            </select>
+            <div class="container" id="regGroup" style="display: none;">
+                <label for="group">Selecciona tu grupo:</label>
+                <select id="group">
+                    <option value="Grupo A">Grupo A</option>
+                    <option value="Grupo B">Grupo B</option>
+                </select>
+            </div>
+            <button type="submit">Registrarse</button>
+        </form>
+        <p>¿Ya tienes cuenta? <a href="#" id="showLogin">Iniciar sesión</a></p>
+    </div>
+
+    
+    <div id="taskManager" style="display: none;">
+        <h2>Gestión de Tareas</h2>
+
+        <!-- Formulario para Profesores -->
+        <div id="taskFormSection" style="display: none;">
+            <input type="text" id="taskTitle" placeholder="Título de la tarea">
+            <textarea id="taskDescription" placeholder="Descripción"></textarea>
+            <input type="date" id="taskDueDate">
+            <select id="taskGroup">
+                <option value="Grupo A">Grupo A</option>
+                <option value="Grupo B">Grupo B</option>
+            </select>
+            <button id="addTaskButton">Agregar Tarea</button>
+        </div>
+
+        <h3>Lista de Tareas</h3>
+        <label for="sortTasks">Ordenar por:</label>
+        <select id="sortTasks">
+            <option value="fecha">Fecha de Entrega</option>
+            <option value="estado">Estado</option>
+            <option value="asignatura">Grupo</option>
+        </select>
+    <div id="taskTableContainer">
+        <table>
+            <thead>
+                <tr>
+                    <th>Título</th>
+                    <th>Descripción</th>
+                    <th>Fecha de Entrega</th>
+                    <th>Grupo</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="taskList"></tbody>
+        </table>
+    </div>
+        <button id="logout">Cerrar Sesión</button>
+    </div>
+
+</body>
+</html>

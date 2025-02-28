@@ -1,0 +1,155 @@
+/* main */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    flex-direction: column;
+}
+
+/* Contenedores principales */
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    
+}
+
+.hidden {
+    display: none;
+}
+
+/* Inputs, Selects y Botones */
+input, select, button, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+button {
+    background-color: #0f4fff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #259bfc;
+}
+
+/* Tabla de tareas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #0f4fff;
+    color: white;
+}
+
+/*  Estados de las tareas */
+.task-warning {
+    background-color: red;
+    color: white;
+}
+
+.task-completed {
+    background-color: green;
+    color: white;
+}
+
+/* Ordenamiento*/
+#sortTasks {
+    width: 200px;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+/* Boton para cerrar sesion */
+#logout {
+    background: #6c757d;
+    margin-top: 20px;
+}
+
+#logout:hover {
+    background: #5a6268;
+}
+
+
+.task-form {
+    background: #e9ecef;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+button.delete {
+    background: #dc3545;
+}
+
+button.delete:hover {
+    background: #c82333;
+}
+
+button.complete {
+    background: #28a745;
+}
+
+button.complete:hover {
+    background: #218838;
+}
+
+#regGroup {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 100%;  /* Asegura que el contenedor no sea más ancho */
+    box-sizing: border-box; /* Evita que el padding o bordes aumenten el tamaño */
+}
+
+#regGroup select {
+    width: 100%; /* Para que coincida con los otros inputs */
+}
+
+#regGroup label {
+    text-align: left; /* Alinear el label con los otros campos */
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#taskTableContainer {
+    width: 100%; /* O ajusta según el diseño */
+    max-height: 300px; /* Altura máxima antes de que aparezca el scroll */
+    overflow-y: auto; /* Habilita el desplazamiento vertical */
+    border: 1px solid #ddd; /* Opcional: solo para visualización */
+    padding: 5px;
+}
+
+#taskTableContainer table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#taskTableContainer th, #taskTableContainer td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+

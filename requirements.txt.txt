@@ -1,0 +1,6 @@
+Flask
+Flask-MySQL
+Flask-CORS
+Flask-Bcrypt
+
+Comando para instalar, eliminar este texto y guardar el archivo solo con los nombres. pip install -r requirements.txt
