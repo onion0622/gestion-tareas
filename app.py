@@ -1,4 +1,5 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
+
 from werkzeug.security import generate_password_hash, check_password_hash
 from database import obtener_cursor, db
 from flask_cors import CORS  # Importar CORS
@@ -149,7 +150,12 @@ def entregar_tarea(id):
     finally:
         cursor.close()
 
+@app.route('/')
+def home():
+    return render_template('index.html')
+
 
 
 if __name__ == '__main__':
     app.run(debug=True)
+

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Tareas</title>
-    <link rel="stylesheet" href="../static/style.css">
-    <script src="../static/script.js" defer></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
 </head>
 <body>
 
@@ -37,7 +37,8 @@
                     <option value="Grupo B">Grupo B</option>
                 </select>
             </div>
-            <button type="submit">Registrarse</button>
+            <button type="submit" id="btnRegister">Registrarse</button>
+
         </form>
         <p>¿Ya tienes cuenta? <a href="#" id="showLogin">Iniciar sesión</a></p>
     </div>
@@ -45,7 +46,10 @@
     
     <div id="taskManager" style="display: none;">
         <h2>Gestión de Tareas</h2>
-
+        <div id="horaInternacional" style="text-align:right; font-style:italic; margin-bottom:10px;">
+            Cargando hora de Japón...
+        </div>
+        
         <!-- Formulario para Profesores -->
         <div id="taskFormSection" style="display: none;">
             <input type="text" id="taskTitle" placeholder="Título de la tarea">

@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    mostrarHoraInternacional();
     const loginContainer = document.getElementById("loginContainer");
     const registerContainer = document.getElementById("registerContainer");
     const taskManager = document.getElementById("taskManager");
@@ -179,7 +180,36 @@ document.addEventListener("DOMContentLoaded", function () {
     
         renderTasks();
     });
+
+// API DE HORA EN JAPON
+
+    async function mostrarHoraInternacional() {
+        const contenedor = document.getElementById("horaInternacional");
     
+        try {
+            // Obtener la hora base solo una vez
+            const respuesta = await fetch("https://timeapi.io/api/Time/current/zone?timeZone=Asia/Tokyo");
+            const datos = await respuesta.json();
+            let hora = new Date(datos.dateTime);
+    
+            // Actualizar cada segundo localmente
+            setInterval(() => {
+                hora.setSeconds(hora.getSeconds() + 1); // Incrementa en 1 segundo
+                const horaFormateada = hora.toLocaleTimeString("es-ES", {
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit'
+                });
+                contenedor.textContent = `Hora en Japón: ${horaFormateada}`;
+            }, 1000);
+    
+        } catch (error) {
+            contenedor.textContent = "No se pudo obtener la hora internacional.";
+            console.error("Error al obtener hora internacional:", error);
+        }
+    }
+    
+     
 
     async function renderTasks() {
         window.renderTasks = renderTasks;
@@ -416,3 +446,4 @@ async function cargarTareas() {
 
 
 });
+
